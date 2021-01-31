@@ -1,0 +1,24 @@
+PROBLEM: I/P- N = 5
+              A = {1, 1, 2, 5, 5}
+         O/P- 2
+
+         Explain: Since 2 occurs once, while other numbers occur twice, 2 is the answer.
+         
+         Time complexity: O(log n)
+         Here, I use binary search concept for O(log n) time complexity.
+         
+         
+         
+SOLUTION:
+
+int search(int A[], int N){
+	    int mid= N/2;
+	    int ele=0;
+	    for(int i=0;i<=mid;i++){
+	        ele^=A[i];
+	    }
+	    for(int i=mid+1;i<N;i++){
+	        ele^=A[i];
+	    }
+	    return ele;
+	}
