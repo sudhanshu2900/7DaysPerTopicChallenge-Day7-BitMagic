@@ -1,0 +1,27 @@
+PROBLEM: I/P- N=4
+         O/P- 5
+         
+         Explain: For numbers from 1 to 4.
+         
+                  For 1: 0 0 1 = 1 set bits
+                  For 2: 0 1 0 = 1 set bits
+                  For 3: 0 1 1 = 2 set bits
+                  For 4: 1 0 0 = 1 set bits
+                  Therefore, the total set bits is 5
+                  
+                  
+SOLUTION:
+
+int countSetBits(int n)
+{
+    if(n==0) return 0;
+    
+    int a=(log2 (n));
+    return((pow(2,a-1)*a)+(n-(pow(2,a))+1)+countSetBits(n-pow(2,a)));
+}
+
+
+
+
+Reference Video:  
+    https://www.youtube.com/watch?v=g6OxU-hRGtY&feature=youtu.be
